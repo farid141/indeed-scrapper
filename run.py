@@ -17,12 +17,12 @@ while next_page:
 
     if job_df.empty:
         job_df = new_df
-
-    job_df = pd.concat(
-        [job_df, new_df],
-        axis=0,
-        ignore_index=True
-    )
+    else:
+        job_df = pd.concat(
+            [job_df, new_df],
+            axis=0,
+            ignore_index=True
+        )
 
     # check pagination and click next
     next_page = job_inst.check_pagination()
